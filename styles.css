@@ -365,3 +365,29 @@ h2 { font-weight:650; letter-spacing:-.045em; }
 .last-inner .eyebrow { color:#a7cfff; }
 .last-inner h2 em { color:#a7cfff; }
 
+/* Phone readability: raise supporting text, labels, and exercise details. */
+@media(max-width:740px) {
+  body { font-size:17px; }
+  .site-header nav { font-size:13px; }
+  .brand { font-size:18px; }
+  .eyebrow,.session-kicker,.history-tag,.day span,.day i,.phase-grid article span,
+  .meal-timeline article span,.pill,.summary-label { font-size:12px; }
+  .hero-text,.food-copy,.section-lead,.training-plan-intro > p:first-child,
+  .phase-grid article p,.conditioning-note,.training-caution,.session-copy,
+  .meal-timeline article p,.meal-plan-heading p:last-child,.supp-card p,
+  .preference-card p:last-child,.safety-note p,.inventory-intro,.inventory-foot,
+  .storage-note,.weight-status { font-size:16px; line-height:1.65; }
+  .history p:last-child,.session-bottom,.disclaimer,.meal-row small,
+  .log-content,.dfw-notes div,.weight-table { font-size:14px; line-height:1.6; }
+  .move { font-size:17px; }
+  .move small,.time-chip,.meal-row b,.logged-day summary,
+  .supplement-inventory summary,.weight-form label { font-size:15px; }
+  .weight-form input { font-size:17px; }
+  .button,.text-link,.complete,.backup-button,.delete-entry { font-size:15px; }
+  .meal-ideas { font-size:15px; }
+}
+@media(max-width:390px) {
+  .site-header nav { font-size:12px; }
+  .brand { font-size:17px; }
+}
+

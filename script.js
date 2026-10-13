@@ -60,18 +60,18 @@ showPlan('one');
 
 // A small built-in exercise guide; it works offline and needs no account.
 const exerciseLibrary = [
-  { name:'Goblet squat', equipment:'Dumbbell or kettlebell', type:'dumbbell', focus:'Legs · hips', cue:'Hold one weight close to your chest. Sit between your hips, then stand with control.', option:'Make it easier: squat to a chair or use a lighter weight.' },
+  { name:'Goblet squat', equipment:'Dumbbell or kettlebell', type:'both', focus:'Legs · hips', cue:'Hold one weight close to your chest. Sit between your hips, then stand with control.', option:'Make it easier: squat to a chair or use a lighter weight.' },
   { name:'Dumbbell bench press', equipment:'Dumbbells · bench', type:'dumbbell', focus:'Chest · arms', cue:'Lie on the bench with feet supported. Lower the weights toward your chest, then press up smoothly.', option:'Alternative: use a lighter pair or do a floor press.' },
   { name:'Single-arm dumbbell row', equipment:'Dumbbell · bench', type:'dumbbell', focus:'Back · arms', cue:'Support one hand on the bench. Pull the weight toward your hip, then lower it slowly.', option:'Keep your back steady; switch sides after the reps.' },
-  { name:'Farmer carry', equipment:'Dumbbells or kettlebells', type:'dumbbell', focus:'Grip · trunk', cue:'Hold a weight in each hand and walk with short, steady steps. Stand tall and breathe normally.', option:'Start light and use a clear, level path.' },
+  { name:'Farmer carry', equipment:'Dumbbells or kettlebells', type:'both', focus:'Grip · trunk', cue:'Hold a weight in each hand and walk with short, steady steps. Stand tall and breathe normally.', option:'Start light and use a clear, level path.' },
   { name:'Kettlebell swing', equipment:'Kettlebell', type:'kettlebell', focus:'Hips · posterior chain', cue:'Hinge at the hips and let the bell swing between your thighs. Stand tall to send it forward; arms guide, hips drive.', option:'Use only a familiar, manageable bell and a practiced hinge. Otherwise substitute a light RDL.' },
-  { name:'Standing strict press', equipment:'Dumbbells or kettlebells', type:'dumbbell', focus:'Shoulders · arms', cue:'Start at shoulder height. Keep your ribs comfortably stacked and press overhead without leaning back.', option:'Use one light dumbbell at a time or press seated.' },
+  { name:'Standing strict press', equipment:'Dumbbells or kettlebells', type:'both', focus:'Shoulders · arms', cue:'Start at shoulder height. Keep your ribs comfortably stacked and press overhead without leaning back.', option:'Use one light dumbbell at a time or press seated.' },
   { name:'Reverse lunge', equipment:'Bodyweight', type:'bodyweight', focus:'Legs · balance', cue:'Step one foot back, lower only as far as comfortable, then push through the front foot to stand.', option:'Hold a wall or chair for balance; shorten the step if needed.' },
   { name:'Plank', equipment:'Bodyweight', type:'bodyweight', focus:'Trunk', cue:'Support yourself on forearms and knees or toes. Keep your body steady and breathe; stop before your position sags.', option:'Start with a short hold from your knees.' },
   { name:'Dumbbell Romanian deadlift', equipment:'Dumbbells', type:'dumbbell', focus:'Hips · hamstrings', cue:'Hold weights in front of your thighs. Push your hips back with a soft knee bend, then stand by bringing your hips forward.', option:'Lower only as far as you can keep a comfortable, steady back.' },
   { name:'Low step-up', equipment:'Low step · bodyweight', type:'bodyweight', focus:'Legs · balance', cue:'Use a stable, low step. Place one whole foot on it, stand up smoothly, and step down with control.', option:'Use a chair sit-to-stand if the step feels uncomfortable.' },
   { name:'Dumbbell floor press', equipment:'Dumbbells · floor', type:'dumbbell', focus:'Chest · arms', cue:'Lie on the floor with knees bent. Lower your upper arms gently to the floor, then press the weights up.', option:'Use a light load and a comfortable range.' },
-  { name:'Suitcase carry', equipment:'One dumbbell or kettlebell', type:'kettlebell', focus:'Grip · trunk', cue:'Hold one weight at your side. Walk slowly without leaning; switch hands and repeat.', option:'Begin with a light weight and a short distance.' }
+  { name:'Suitcase carry', equipment:'One dumbbell or kettlebell', type:'both', focus:'Grip · trunk', cue:'Hold one weight at your side. Walk slowly without leaning; switch hands and repeat.', option:'Begin with a light weight and a short distance.' }
 ];
 
 const exerciseGrid = document.querySelector('#exercise-grid');
@@ -85,7 +85,7 @@ if (exerciseGrid) {
     const query = search.value.trim().toLowerCase();
     const matches = exerciseLibrary.filter((exercise) => {
       const textMatch = `${exercise.name} ${exercise.equipment} ${exercise.focus} ${exercise.cue}`.toLowerCase().includes(query);
-      const equipmentMatch = activeFilter === 'all' || exercise.type === activeFilter;
+      const equipmentMatch = activeFilter === 'all' || exercise.type === activeFilter || exercise.type === 'both';
       return textMatch && equipmentMatch;
     });
     exerciseGrid.replaceChildren();

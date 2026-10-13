@@ -167,7 +167,7 @@ if (exerciseGrid) {
       const stepsHeading = document.createElement('h5'); stepsHeading.textContent = 'How to do it';
       const steps = document.createElement('ol');
       exercise.steps.forEach((step) => { const item = document.createElement('li'); item.textContent = step; steps.append(item); });
-      const pictureNote = document.createElement('p'); pictureNote.className = 'illustration-note'; pictureNote.textContent = 'Images are references; follow the written steps and use a comfortable range of motion.';
+      const pictureNote = document.createElement('p'); pictureNote.className = 'illustration-note'; pictureNote.textContent = 'Images, video, and animation are references; follow the written steps and use a comfortable range of motion.';
       detail.append(summary, illustration, stepsHeading, steps, pictureNote);
       card.append(top, heading, equipment, cue, option, detail);
       exerciseGrid.append(card);

@@ -61,8 +61,8 @@ showPlan('one');
 // A small built-in exercise guide; it works offline and needs no account.
 const exerciseLibrary = [
   { name:'Goblet squat', equipment:'Dumbbell or kettlebell', type:'both', pose:'squat', focus:'Legs · hips', cue:'Hold one weight close to your chest. Sit between your hips, then stand with control.', option:'Make it easier: squat to a chair or use a lighter weight.', steps:['Stand with feet about shoulder-width and hold one weight close to your chest.','Bend your knees and hips together, lowering only as far as you can stay balanced.','Press through your whole foot to stand tall again.'] },
-  { name:'Dumbbell bench press', equipment:'Dumbbells · bench', type:'dumbbell', pose:'bench', focus:'Chest · arms', cue:'Lie on the bench with feet supported. Lower the weights toward your chest, then press up smoothly.', option:'Alternative: use a lighter pair or do a floor press.', steps:['Lie on the bench with your feet supported and weights above your chest.','Bend your elbows and lower the weights with control toward either side of your chest.','Press them back up smoothly without bouncing or forcing your elbows to lock.'] },
-  { name:'Single-arm dumbbell row', equipment:'Dumbbell · bench', type:'dumbbell', pose:'row', focus:'Back · arms', cue:'Support one hand on the bench. Pull the weight toward your hip, then lower it slowly.', option:'Keep your back steady; switch sides after the reps.', steps:['Place one hand and knee or foot on the bench; keep your back comfortably steady.','Let the weight hang below your shoulder, then pull your elbow toward your hip.','Lower the weight slowly and complete the same number of reps on the other side.'] },
+  { name:'Dumbbell bench press', equipment:'Dumbbells · bench', type:'dumbbell', pose:'bench', image:{src:'https://wger.de/media/exercise-images/97/Dumbbell-bench-press-1.png.400x400_q85.jpg',alt:'Wger illustration showing a dumbbell bench press',author:'Everkinetic',license:'CC BY-SA 3.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/3.0/deed.en',source:'https://wger.de/en/exercise/75/view/benchpress-dumbbells'}, focus:'Chest · arms', cue:'Lie on the bench with feet supported. Lower the weights toward your chest, then press up smoothly.', option:'Alternative: use a lighter pair or do a floor press.', steps:['Lie on the bench with your feet supported and weights above your chest.','Bend your elbows and lower the weights with control toward either side of your chest.','Press them back up smoothly without bouncing or forcing your elbows to lock.'] },
+  { name:'Single-arm dumbbell row', equipment:'Dumbbell · bench', type:'dumbbell', pose:'row', image:{src:'https://wger.de/media/exercise-images/81/a751a438-ae2d-4751-8d61-cef0e9292174.png.400x400_q85.jpg',alt:'Wger image demonstrating a single-arm dumbbell row',author:'Franpol',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/deed.en',source:'https://wger.de/en/exercise/81/view/bent-over-dumbbell-rows-single-arm'}, focus:'Back · arms', cue:'Support one hand on the bench. Pull the weight toward your hip, then lower it slowly.', option:'Keep your back steady; switch sides after the reps.', steps:['Place one hand and knee or foot on the bench; keep your back comfortably steady.','Let the weight hang below your shoulder, then pull your elbow toward your hip.','Lower the weight slowly and complete the same number of reps on the other side.'] },
   { name:'Farmer carry', equipment:'Dumbbells or kettlebells', type:'both', pose:'carry', focus:'Grip · trunk', cue:'Hold a weight in each hand and walk with short, steady steps. Stand tall and breathe normally.', option:'Start light and use a clear, level path.', steps:['Pick up two manageable weights from a stable position.','Stand tall, keep your shoulders relaxed, and walk with short controlled steps.','Set the weights down gently before you get tired or your posture changes.'] },
   { name:'Kettlebell swing', equipment:'Kettlebell', type:'kettlebell', pose:'swing', focus:'Hips · posterior chain', cue:'Hinge at the hips and let the bell swing between your thighs. Stand tall to send it forward; arms guide, hips drive.', option:'Use only a familiar, manageable bell and a practiced hinge. Otherwise substitute a light RDL.', steps:['Set the bell in front of you, hinge back, and grip it with both hands.','Hike it between your thighs, then snap your hips open to send it forward; keep your arms relaxed.','Let the bell return and hinge back again. Stop if your back position or control changes.'] },
   { name:'Standing strict press', equipment:'Dumbbells or kettlebells', type:'both', pose:'press', focus:'Shoulders · arms', cue:'Start at shoulder height. Keep your ribs comfortably stacked and press overhead without leaning back.', option:'Use one light dumbbell at a time or press seated.', steps:['Stand with feet comfortable and weights at shoulder height.','Brace gently and press up until your arms are overhead, without leaning back.','Lower the weights to your shoulders with control.'] },
@@ -81,35 +81,43 @@ if (exerciseGrid) {
   const empty = document.querySelector('#exercise-empty');
   const count = document.querySelector('#exercise-count');
   let activeFilter = 'all';
-  const poseSets = {
-    squat: [{head:[0,15],shoulder:[0,38],elbow:[-14,48],hand:[-2,55],hip:[0,66],knee:[8,90],foot:[9,111]},{head:[0,29],shoulder:[-1,49],elbow:[-15,58],hand:[-4,65],hip:[0,80],knee:[17,94],foot:[19,111]}],
-    bench: [{head:[-28,78],shoulder:[-8,77],elbow:[0,59],hand:[3,45],hip:[27,80],knee:[46,91],foot:[58,110]},{head:[-28,78],shoulder:[-8,77],elbow:[0,54],hand:[3,35],hip:[27,80],knee:[46,91],foot:[58,110]}],
-    row: [{head:[0,24],shoulder:[5,44],elbow:[-7,62],hand:[-14,79],hip:[24,69],knee:[43,89],foot:[46,111]},{head:[0,24],shoulder:[5,44],elbow:[8,48],hand:[21,57],hip:[24,69],knee:[43,89],foot:[46,111]}],
-    carry: [{head:[0,15],shoulder:[0,38],elbow:[-11,52],hand:[-12,68],hip:[0,66],knee:[-4,90],foot:[-6,111]},{head:[0,15],shoulder:[0,38],elbow:[-11,52],hand:[-12,68],hip:[0,66],knee:[5,90],foot:[8,111]}],
-    swing: [{head:[0,24],shoulder:[7,43],elbow:[19,53],hand:[26,61],hip:[-13,66],knee:[8,89],foot:[9,111]},{head:[0,15],shoulder:[0,38],elbow:[5,47],hand:[19,52],hip:[0,66],knee:[-4,90],foot:[-6,111]}],
-    press: [{head:[0,15],shoulder:[0,38],elbow:[-14,48],hand:[-12,59],hip:[0,66],knee:[-4,90],foot:[-6,111]},{head:[0,15],shoulder:[0,38],elbow:[-11,21],hand:[-12,4],hip:[0,66],knee:[-4,90],foot:[-6,111]}],
-    lunge: [{head:[0,15],shoulder:[0,38],elbow:[-11,52],hand:[-12,68],hip:[0,66],knee:[-4,90],foot:[-6,111]},{head:[0,26],shoulder:[0,47],elbow:[-11,57],hand:[-12,70],hip:[0,75],knee:[-16,96],foot:[-19,111]}],
-    plank: [{head:[-24,58],shoulder:[-7,62],elbow:[-2,81],hand:[11,91],hip:[27,68],knee:[48,75],foot:[63,78]},{head:[-24,58],shoulder:[-7,62],elbow:[-2,81],hand:[11,91],hip:[27,68],knee:[50,71],foot:[67,74]}],
-    hinge: [{head:[0,15],shoulder:[0,38],elbow:[-10,52],hand:[-11,66],hip:[0,66],knee:[-5,90],foot:[-6,111]},{head:[0,24],shoulder:[13,44],elbow:[6,62],hand:[-1,77],hip:[-13,66],knee:[-3,89],foot:[-6,111]}],
-    stepup: [{head:[0,15],shoulder:[0,38],elbow:[-10,52],hand:[-11,67],hip:[0,66],knee:[-5,90],foot:[-6,111]},{head:[0,15],shoulder:[0,38],elbow:[-10,52],hand:[-11,67],hip:[0,66],knee:[-3,65],foot:[-5,82]}],
-    floorpress: [{head:[-28,88],shoulder:[-8,87],elbow:[2,70],hand:[3,55],hip:[25,90],knee:[43,94],foot:[58,110]},{head:[-28,88],shoulder:[-8,87],elbow:[2,64],hand:[3,46],hip:[25,90],knee:[43,94],foot:[58,110]}]
-  };
-  function exerciseIllustration(exercise) {
-    const pair = poseSets[exercise.pose] || poseSets.carry;
-    const drawPerson = (base, pose) => {
-      const pt = ([x,y]) => [base+x,y];
-      const [head,shoulder,elbow,hand,hip,knee,foot] = [pose.head,pose.shoulder,pose.elbow,pose.hand,pose.hip,pose.knee,pose.foot].map(pt);
-      const backElbow = pt([pose.elbow[0]+7,pose.elbow[1]+2]);
-      const backHand = pt([pose.hand[0]+8,pose.hand[1]+2]);
-      const backKnee = pt([pose.knee[0]-7,pose.knee[1]+2]);
-      const backFoot = pt([pose.foot[0]-8,pose.foot[1]+1]);
-      const line = (a,b,width=6) => `<path d="M${a[0]} ${a[1]} L${b[0]} ${b[1]}"/>`;
-      const weight = exercise.type === 'bodyweight' ? '' : `<rect x="${hand[0]-6}" y="${hand[1]+1}" width="12" height="8" rx="3" class="diagram-weight"/>`;
-      return `<g class="diagram-person">${line(shoulder,hip,8)}${line(shoulder,elbow)}${line(elbow,hand)}${line(pt([shoulder[0]+3,shoulder[1]+2]),backElbow)}${line(backElbow,backHand)}${line(hip,knee)}${line(knee,foot)}${line(pt([hip[0]+5,hip[1]+1]),backKnee)}${line(backKnee,backFoot)}<circle cx="${head[0]}" cy="${head[1]}" r="8"/>${weight}</g>`;
-    };
-    const props = ['bench','floorpress'].includes(exercise.pose) ? '<path class="diagram-prop" d="M28 101H112M36 101V116M105 101V116"/>' : exercise.pose === 'stepup' ? '<path class="diagram-prop" d="M181 92H253V116H181Z"/>' : exercise.pose === 'plank' ? '<path class="diagram-prop" d="M24 103H111"/>' : '';
-    const accessibleName = `${exercise.name} movement diagram, start and finish positions`;
-    return `<svg class="exercise-illustration" viewBox="0 0 280 128" role="img" aria-label="${accessibleName}"><rect class="diagram-bg" x="1" y="1" width="278" height="126" rx="12"/><text class="diagram-label" x="38" y="17">START</text><text class="diagram-label" x="190" y="17">MOVE</text><path class="diagram-arrow" d="M126 42H151M145 36L151 42L145 48"/>${props}${drawPerson(66,pair[0])}${drawPerson(218,pair[1])}</svg>`;
+  function exerciseVisual(exercise) {
+    const visual = document.createElement('div');
+    visual.className = 'exercise-visual';
+    if (!exercise.image) {
+      const note = document.createElement('p');
+      note.className = 'exercise-image-unavailable';
+      note.textContent = 'No verified matching wger image is available for this movement yet.';
+      const browse = document.createElement('a');
+      browse.href = 'https://wger.de/en/exercise/overview/';
+      browse.target = '_blank';
+      browse.rel = 'noopener noreferrer';
+      browse.textContent = 'Browse wger’s exercise library ↗';
+      visual.append(note, browse);
+      return visual;
+    }
+    const image = document.createElement('img');
+    image.className = 'exercise-reference-image';
+    image.src = exercise.image.src;
+    image.alt = exercise.image.alt;
+    image.loading = 'lazy';
+    image.referrerPolicy = 'no-referrer';
+    const credit = document.createElement('p');
+    credit.className = 'exercise-image-credit';
+    credit.append(document.createTextNode('Image: ' + exercise.image.author + ' · '));
+    const licenseLink = document.createElement('a');
+    licenseLink.href = exercise.image.licenseUrl;
+    licenseLink.target = '_blank';
+    licenseLink.rel = 'noopener noreferrer';
+    licenseLink.textContent = exercise.image.license;
+    const sourceLink = document.createElement('a');
+    sourceLink.href = exercise.image.source;
+    sourceLink.target = '_blank';
+    sourceLink.rel = 'noopener noreferrer';
+    sourceLink.textContent = 'wger source';
+    credit.append(licenseLink, document.createTextNode(' · '), sourceLink);
+    visual.append(image, credit);
+    return visual;
   }
   function renderExercises() {
     const query = search.value.trim().toLowerCase();
@@ -131,12 +139,12 @@ if (exerciseGrid) {
       const cue = document.createElement('p'); cue.className = 'exercise-cue'; cue.textContent = exercise.cue;
       const option = document.createElement('p'); option.className = 'exercise-option'; option.textContent = exercise.option;
       const detail = document.createElement('details'); detail.className = 'exercise-details';
-      const summary = document.createElement('summary'); summary.textContent = 'See movement picture & steps';
-      const illustration = document.createElement('div'); illustration.innerHTML = exerciseIllustration(exercise);
+      const summary = document.createElement('summary'); summary.textContent = 'See exercise image & steps';
+      const illustration = exerciseVisual(exercise);
       const stepsHeading = document.createElement('h5'); stepsHeading.textContent = 'How to do it';
       const steps = document.createElement('ol');
       exercise.steps.forEach((step) => { const item = document.createElement('li'); item.textContent = step; steps.append(item); });
-      const pictureNote = document.createElement('p'); pictureNote.className = 'illustration-note'; pictureNote.textContent = 'Original simple movement sketch; it is not a form assessment.';
+      const pictureNote = document.createElement('p'); pictureNote.className = 'illustration-note'; pictureNote.textContent = 'Images are references; follow the written steps and use a comfortable range of motion.';
       detail.append(summary, illustration, stepsHeading, steps, pictureNote);
       card.append(top, heading, equipment, cue, option, detail);
       exerciseGrid.append(card);
@@ -443,5 +451,4 @@ if (weightForm) {
 
   renderEntries();
 }
-
 

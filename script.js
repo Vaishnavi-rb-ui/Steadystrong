@@ -139,7 +139,7 @@ if (exerciseGrid) {
       const cue = document.createElement('p'); cue.className = 'exercise-cue'; cue.textContent = exercise.cue;
       const option = document.createElement('p'); option.className = 'exercise-option'; option.textContent = exercise.option;
       const detail = document.createElement('details'); detail.className = 'exercise-details';
-      const summary = document.createElement('summary'); summary.textContent = 'See exercise image & steps';
+      const summary = document.createElement('summary'); summary.textContent = exercise.image ? 'See wger image & steps' : 'See steps';
       const illustration = exerciseVisual(exercise);
       const stepsHeading = document.createElement('h5'); stepsHeading.textContent = 'How to do it';
       const steps = document.createElement('ol');

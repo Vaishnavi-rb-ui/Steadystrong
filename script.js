@@ -60,18 +60,18 @@ showPlan('one');
 
 // A small built-in exercise guide; it works offline and needs no account.
 const exerciseLibrary = [
-  { name:'Goblet squat', equipment:'Dumbbell or kettlebell', type:'both', focus:'Legs · hips', cue:'Hold one weight close to your chest. Sit between your hips, then stand with control.', option:'Make it easier: squat to a chair or use a lighter weight.' },
-  { name:'Dumbbell bench press', equipment:'Dumbbells · bench', type:'dumbbell', focus:'Chest · arms', cue:'Lie on the bench with feet supported. Lower the weights toward your chest, then press up smoothly.', option:'Alternative: use a lighter pair or do a floor press.' },
-  { name:'Single-arm dumbbell row', equipment:'Dumbbell · bench', type:'dumbbell', focus:'Back · arms', cue:'Support one hand on the bench. Pull the weight toward your hip, then lower it slowly.', option:'Keep your back steady; switch sides after the reps.' },
-  { name:'Farmer carry', equipment:'Dumbbells or kettlebells', type:'both', focus:'Grip · trunk', cue:'Hold a weight in each hand and walk with short, steady steps. Stand tall and breathe normally.', option:'Start light and use a clear, level path.' },
-  { name:'Kettlebell swing', equipment:'Kettlebell', type:'kettlebell', focus:'Hips · posterior chain', cue:'Hinge at the hips and let the bell swing between your thighs. Stand tall to send it forward; arms guide, hips drive.', option:'Use only a familiar, manageable bell and a practiced hinge. Otherwise substitute a light RDL.' },
-  { name:'Standing strict press', equipment:'Dumbbells or kettlebells', type:'both', focus:'Shoulders · arms', cue:'Start at shoulder height. Keep your ribs comfortably stacked and press overhead without leaning back.', option:'Use one light dumbbell at a time or press seated.' },
-  { name:'Reverse lunge', equipment:'Bodyweight', type:'bodyweight', focus:'Legs · balance', cue:'Step one foot back, lower only as far as comfortable, then push through the front foot to stand.', option:'Hold a wall or chair for balance; shorten the step if needed.' },
-  { name:'Plank', equipment:'Bodyweight', type:'bodyweight', focus:'Trunk', cue:'Support yourself on forearms and knees or toes. Keep your body steady and breathe; stop before your position sags.', option:'Start with a short hold from your knees.' },
-  { name:'Dumbbell Romanian deadlift', equipment:'Dumbbells', type:'dumbbell', focus:'Hips · hamstrings', cue:'Hold weights in front of your thighs. Push your hips back with a soft knee bend, then stand by bringing your hips forward.', option:'Lower only as far as you can keep a comfortable, steady back.' },
-  { name:'Low step-up', equipment:'Low step · bodyweight', type:'bodyweight', focus:'Legs · balance', cue:'Use a stable, low step. Place one whole foot on it, stand up smoothly, and step down with control.', option:'Use a chair sit-to-stand if the step feels uncomfortable.' },
-  { name:'Dumbbell floor press', equipment:'Dumbbells · floor', type:'dumbbell', focus:'Chest · arms', cue:'Lie on the floor with knees bent. Lower your upper arms gently to the floor, then press the weights up.', option:'Use a light load and a comfortable range.' },
-  { name:'Suitcase carry', equipment:'One dumbbell or kettlebell', type:'both', focus:'Grip · trunk', cue:'Hold one weight at your side. Walk slowly without leaning; switch hands and repeat.', option:'Begin with a light weight and a short distance.' }
+  { name:'Goblet squat', equipment:'Dumbbell or kettlebell', type:'both', pose:'squat', focus:'Legs · hips', cue:'Hold one weight close to your chest. Sit between your hips, then stand with control.', option:'Make it easier: squat to a chair or use a lighter weight.', steps:['Stand with feet about shoulder-width and hold one weight close to your chest.','Bend your knees and hips together, lowering only as far as you can stay balanced.','Press through your whole foot to stand tall again.'] },
+  { name:'Dumbbell bench press', equipment:'Dumbbells · bench', type:'dumbbell', pose:'bench', focus:'Chest · arms', cue:'Lie on the bench with feet supported. Lower the weights toward your chest, then press up smoothly.', option:'Alternative: use a lighter pair or do a floor press.', steps:['Lie on the bench with your feet supported and weights above your chest.','Bend your elbows and lower the weights with control toward either side of your chest.','Press them back up smoothly without bouncing or forcing your elbows to lock.'] },
+  { name:'Single-arm dumbbell row', equipment:'Dumbbell · bench', type:'dumbbell', pose:'row', focus:'Back · arms', cue:'Support one hand on the bench. Pull the weight toward your hip, then lower it slowly.', option:'Keep your back steady; switch sides after the reps.', steps:['Place one hand and knee or foot on the bench; keep your back comfortably steady.','Let the weight hang below your shoulder, then pull your elbow toward your hip.','Lower the weight slowly and complete the same number of reps on the other side.'] },
+  { name:'Farmer carry', equipment:'Dumbbells or kettlebells', type:'both', pose:'carry', focus:'Grip · trunk', cue:'Hold a weight in each hand and walk with short, steady steps. Stand tall and breathe normally.', option:'Start light and use a clear, level path.', steps:['Pick up two manageable weights from a stable position.','Stand tall, keep your shoulders relaxed, and walk with short controlled steps.','Set the weights down gently before you get tired or your posture changes.'] },
+  { name:'Kettlebell swing', equipment:'Kettlebell', type:'kettlebell', pose:'swing', focus:'Hips · posterior chain', cue:'Hinge at the hips and let the bell swing between your thighs. Stand tall to send it forward; arms guide, hips drive.', option:'Use only a familiar, manageable bell and a practiced hinge. Otherwise substitute a light RDL.', steps:['Set the bell in front of you, hinge back, and grip it with both hands.','Hike it between your thighs, then snap your hips open to send it forward; keep your arms relaxed.','Let the bell return and hinge back again. Stop if your back position or control changes.'] },
+  { name:'Standing strict press', equipment:'Dumbbells or kettlebells', type:'both', pose:'press', focus:'Shoulders · arms', cue:'Start at shoulder height. Keep your ribs comfortably stacked and press overhead without leaning back.', option:'Use one light dumbbell at a time or press seated.', steps:['Stand with feet comfortable and weights at shoulder height.','Brace gently and press up until your arms are overhead, without leaning back.','Lower the weights to your shoulders with control.'] },
+  { name:'Reverse lunge', equipment:'Bodyweight', type:'bodyweight', pose:'lunge', focus:'Legs · balance', cue:'Step one foot back, lower only as far as comfortable, then push through the front foot to stand.', option:'Hold a wall or chair for balance; shorten the step if needed.', steps:['Stand beside a wall or chair if you want support.','Step one foot back and bend both knees a little, only as far as comfortable.','Push through the front foot to return to standing, then switch legs.'] },
+  { name:'Plank', equipment:'Bodyweight', type:'bodyweight', pose:'plank', focus:'Trunk', cue:'Support yourself on forearms and knees or toes. Keep your body steady and breathe; stop before your position sags.', option:'Start with a short hold from your knees.', steps:['Place your forearms on the floor and set your knees down or extend your legs.','Keep your head, trunk, and hips in a comfortable line while breathing steadily.','End the hold before your hips sag or your back feels strained.'] },
+  { name:'Dumbbell Romanian deadlift', equipment:'Dumbbells', type:'dumbbell', pose:'hinge', focus:'Hips · hamstrings', cue:'Hold weights in front of your thighs. Push your hips back with a soft knee bend, then stand by bringing your hips forward.', option:'Lower only as far as you can keep a comfortable, steady back.', steps:['Stand tall with weights near your thighs and knees slightly bent.','Push your hips back as the weights slide close down your legs; stop when you feel a comfortable stretch.','Press through your feet and bring your hips forward to stand tall.'] },
+  { name:'Low step-up', equipment:'Low step · bodyweight', type:'bodyweight', pose:'stepup', focus:'Legs · balance', cue:'Use a stable, low step. Place one whole foot on it, stand up smoothly, and step down with control.', option:'Use a chair sit-to-stand if the step feels uncomfortable.', steps:['Choose a low, stable step and stand close to it.','Place one whole foot on the step and push through it to stand up.','Step down slowly and repeat on the same side before switching.'] },
+  { name:'Dumbbell floor press', equipment:'Dumbbells · floor', type:'dumbbell', pose:'floorpress', focus:'Chest · arms', cue:'Lie on the floor with knees bent. Lower your upper arms gently to the floor, then press the weights up.', option:'Use a light load and a comfortable range.', steps:['Lie on your back with knees bent and weights above your chest.','Lower your elbows until your upper arms touch the floor gently.','Press the weights up smoothly, then lower them with control.'] },
+  { name:'Suitcase carry', equipment:'One dumbbell or kettlebell', type:'both', pose:'suitcase', focus:'Grip · trunk', cue:'Hold one weight at your side. Walk slowly without leaning; switch hands and repeat.', option:'Begin with a light weight and a short distance.', steps:['Pick up one manageable weight and let it rest by your side.','Walk slowly while keeping your trunk upright and shoulders level.','Set it down gently, switch hands, and walk back.'] }
 ];
 
 const exerciseGrid = document.querySelector('#exercise-grid');
@@ -81,6 +81,36 @@ if (exerciseGrid) {
   const empty = document.querySelector('#exercise-empty');
   const count = document.querySelector('#exercise-count');
   let activeFilter = 'all';
+  const poseSets = {
+    squat: [{head:[0,15],shoulder:[0,38],elbow:[-14,48],hand:[-2,55],hip:[0,66],knee:[8,90],foot:[9,111]},{head:[0,29],shoulder:[-1,49],elbow:[-15,58],hand:[-4,65],hip:[0,80],knee:[17,94],foot:[19,111]}],
+    bench: [{head:[-28,78],shoulder:[-8,77],elbow:[0,59],hand:[3,45],hip:[27,80],knee:[46,91],foot:[58,110]},{head:[-28,78],shoulder:[-8,77],elbow:[0,54],hand:[3,35],hip:[27,80],knee:[46,91],foot:[58,110]}],
+    row: [{head:[0,24],shoulder:[5,44],elbow:[-7,62],hand:[-14,79],hip:[24,69],knee:[43,89],foot:[46,111]},{head:[0,24],shoulder:[5,44],elbow:[8,48],hand:[21,57],hip:[24,69],knee:[43,89],foot:[46,111]}],
+    carry: [{head:[0,15],shoulder:[0,38],elbow:[-11,52],hand:[-12,68],hip:[0,66],knee:[-4,90],foot:[-6,111]},{head:[0,15],shoulder:[0,38],elbow:[-11,52],hand:[-12,68],hip:[0,66],knee:[5,90],foot:[8,111]}],
+    swing: [{head:[0,24],shoulder:[7,43],elbow:[19,53],hand:[26,61],hip:[-13,66],knee:[8,89],foot:[9,111]},{head:[0,15],shoulder:[0,38],elbow:[5,47],hand:[19,52],hip:[0,66],knee:[-4,90],foot:[-6,111]}],
+    press: [{head:[0,15],shoulder:[0,38],elbow:[-14,48],hand:[-12,59],hip:[0,66],knee:[-4,90],foot:[-6,111]},{head:[0,15],shoulder:[0,38],elbow:[-11,21],hand:[-12,4],hip:[0,66],knee:[-4,90],foot:[-6,111]}],
+    lunge: [{head:[0,15],shoulder:[0,38],elbow:[-11,52],hand:[-12,68],hip:[0,66],knee:[-4,90],foot:[-6,111]},{head:[0,26],shoulder:[0,47],elbow:[-11,57],hand:[-12,70],hip:[0,75],knee:[-16,96],foot:[-19,111]}],
+    plank: [{head:[-24,58],shoulder:[-7,62],elbow:[-2,81],hand:[11,91],hip:[27,68],knee:[48,75],foot:[63,78]},{head:[-24,58],shoulder:[-7,62],elbow:[-2,81],hand:[11,91],hip:[27,68],knee:[50,71],foot:[67,74]}],
+    hinge: [{head:[0,15],shoulder:[0,38],elbow:[-10,52],hand:[-11,66],hip:[0,66],knee:[-5,90],foot:[-6,111]},{head:[0,24],shoulder:[13,44],elbow:[6,62],hand:[-1,77],hip:[-13,66],knee:[-3,89],foot:[-6,111]}],
+    stepup: [{head:[0,15],shoulder:[0,38],elbow:[-10,52],hand:[-11,67],hip:[0,66],knee:[-5,90],foot:[-6,111]},{head:[0,15],shoulder:[0,38],elbow:[-10,52],hand:[-11,67],hip:[0,66],knee:[-3,65],foot:[-5,82]}],
+    floorpress: [{head:[-28,88],shoulder:[-8,87],elbow:[2,70],hand:[3,55],hip:[25,90],knee:[43,94],foot:[58,110]},{head:[-28,88],shoulder:[-8,87],elbow:[2,64],hand:[3,46],hip:[25,90],knee:[43,94],foot:[58,110]}]
+  };
+  function exerciseIllustration(exercise) {
+    const pair = poseSets[exercise.pose] || poseSets.carry;
+    const drawPerson = (base, pose) => {
+      const pt = ([x,y]) => [base+x,y];
+      const [head,shoulder,elbow,hand,hip,knee,foot] = [pose.head,pose.shoulder,pose.elbow,pose.hand,pose.hip,pose.knee,pose.foot].map(pt);
+      const backElbow = pt([pose.elbow[0]+7,pose.elbow[1]+2]);
+      const backHand = pt([pose.hand[0]+8,pose.hand[1]+2]);
+      const backKnee = pt([pose.knee[0]-7,pose.knee[1]+2]);
+      const backFoot = pt([pose.foot[0]-8,pose.foot[1]+1]);
+      const line = (a,b,width=6) => `<path d="M${a[0]} ${a[1]} L${b[0]} ${b[1]}"/>`;
+      const weight = exercise.type === 'bodyweight' ? '' : `<rect x="${hand[0]-6}" y="${hand[1]+1}" width="12" height="8" rx="3" class="diagram-weight"/>`;
+      return `<g class="diagram-person">${line(shoulder,hip,8)}${line(shoulder,elbow)}${line(elbow,hand)}${line(pt([shoulder[0]+3,shoulder[1]+2]),backElbow)}${line(backElbow,backHand)}${line(hip,knee)}${line(knee,foot)}${line(pt([hip[0]+5,hip[1]+1]),backKnee)}${line(backKnee,backFoot)}<circle cx="${head[0]}" cy="${head[1]}" r="8"/>${weight}</g>`;
+    };
+    const props = ['bench','floorpress'].includes(exercise.pose) ? '<path class="diagram-prop" d="M28 101H112M36 101V116M105 101V116"/>' : exercise.pose === 'stepup' ? '<path class="diagram-prop" d="M181 92H253V116H181Z"/>' : exercise.pose === 'plank' ? '<path class="diagram-prop" d="M24 103H111"/>' : '';
+    const accessibleName = `${exercise.name} movement diagram, start and finish positions`;
+    return `<svg class="exercise-illustration" viewBox="0 0 280 128" role="img" aria-label="${accessibleName}"><rect class="diagram-bg" x="1" y="1" width="278" height="126" rx="12"/><text class="diagram-label" x="38" y="17">START</text><text class="diagram-label" x="190" y="17">MOVE</text><path class="diagram-arrow" d="M126 42H151M145 36L151 42L145 48"/>${props}${drawPerson(66,pair[0])}${drawPerson(218,pair[1])}</svg>`;
+  }
   function renderExercises() {
     const query = search.value.trim().toLowerCase();
     const matches = exerciseLibrary.filter((exercise) => {
@@ -100,7 +130,15 @@ if (exerciseGrid) {
       const equipment = document.createElement('p'); equipment.className = 'exercise-equipment'; equipment.textContent = exercise.equipment;
       const cue = document.createElement('p'); cue.className = 'exercise-cue'; cue.textContent = exercise.cue;
       const option = document.createElement('p'); option.className = 'exercise-option'; option.textContent = exercise.option;
-      card.append(top, heading, equipment, cue, option);
+      const detail = document.createElement('details'); detail.className = 'exercise-details';
+      const summary = document.createElement('summary'); summary.textContent = 'See movement picture & steps';
+      const illustration = document.createElement('div'); illustration.innerHTML = exerciseIllustration(exercise);
+      const stepsHeading = document.createElement('h5'); stepsHeading.textContent = 'How to do it';
+      const steps = document.createElement('ol');
+      exercise.steps.forEach((step) => { const item = document.createElement('li'); item.textContent = step; steps.append(item); });
+      const pictureNote = document.createElement('p'); pictureNote.className = 'illustration-note'; pictureNote.textContent = 'Original simple movement sketch; it is not a form assessment.';
+      detail.append(summary, illustration, stepsHeading, steps, pictureNote);
+      card.append(top, heading, equipment, cue, option, detail);
       exerciseGrid.append(card);
     });
     empty.hidden = matches.length !== 0;
@@ -117,6 +155,136 @@ if (exerciseGrid) {
     renderExercises();
   }));
   renderExercises();
+}
+
+// Food entries and optional daily targets stay in this browser only.
+const manualFoodForm = document.querySelector('#manual-food-form');
+if (manualFoodForm) {
+  const foodLogDate = document.querySelector('#food-log-date');
+  const foodLogList = document.querySelector('#food-log-list');
+  const foodEntryCount = document.querySelector('#food-entry-count');
+  const calorieTarget = document.querySelector('#food-calorie-target');
+  const proteinTarget = document.querySelector('#food-protein-target');
+  const targetSummary = document.querySelector('#food-target-summary');
+  const foodLogStorageKey = 'steadyStrong.foodEntries.v1';
+  const targetStorageKey = 'steadyStrong.foodTargets.v1';
+  const foodTotalIds = { calories: '#food-total-calories', protein: '#food-total-protein', carbs: '#food-total-carbs', fat: '#food-total-fat' };
+  let foodEntries = [];
+  try {
+    const saved = JSON.parse(localStorage.getItem(foodLogStorageKey) || '[]');
+    if (Array.isArray(saved)) foodEntries = saved.filter((entry) => entry && /^\d{4}-\d{2}-\d{2}$/.test(entry.date) && typeof entry.name === 'string' && Number.isFinite(Number(entry.calories)));
+  } catch { /* The page still works without browser storage. */ }
+
+  const now = new Date();
+  const localToday = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  foodLogDate.value = localToday;
+  try {
+    const targets = JSON.parse(localStorage.getItem(targetStorageKey) || '{}');
+    if (Number(targets.calories) > 0) calorieTarget.value = targets.calories;
+    if (Number(targets.protein) > 0) proteinTarget.value = targets.protein;
+  } catch { /* Targets are optional. */ }
+
+  const offLookupForm = document.querySelector('#off-lookup-form');
+  offLookupForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const barcode = document.querySelector('#off-barcode').value.replace(/\D/g, '');
+    const status = document.querySelector('#off-lookup-status');
+    const result = document.querySelector('#off-product-result');
+    status.className = 'food-log-status';
+    result.replaceChildren();
+    if (![8, 12, 13, 14].includes(barcode.length)) {
+      status.textContent = 'Enter a product barcode with 8, 12, 13, or 14 digits.';
+      status.classList.add('error');
+      result.hidden = true;
+      return;
+    }
+    const heading = document.createElement('h5');
+    heading.textContent = 'Product page ready';
+    const note = document.createElement('p');
+    note.textContent = 'Open the product page, check its nutrition panel, then enter the values from the package below.';
+    const link = document.createElement('a');
+    link.href = `https://world.openfoodfacts.org/product/${encodeURIComponent(barcode)}`;
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.textContent = 'View this product on Open Food Facts ↗';
+    result.append(heading, note, link);
+    result.hidden = false;
+    status.textContent = 'Product lookup link created. No food or log data is sent from this page.';
+    status.classList.add('success');
+  });
+
+  function saveFoodEntries() {
+    try { localStorage.setItem(foodLogStorageKey, JSON.stringify(foodEntries)); return true; }
+    catch { return false; }
+  }
+  function saveTargets() {
+    const targets = { calories: Number(calorieTarget.value) || null, protein: Number(proteinTarget.value) || null };
+    try { localStorage.setItem(targetStorageKey, JSON.stringify(targets)); } catch { /* Targets remain editable for this visit. */ }
+  }
+  function renderFoodLog() {
+    const date = foodLogDate.value;
+    const dayEntries = foodEntries.filter((entry) => entry.date === date);
+    const totals = dayEntries.reduce((sum, entry) => {
+      ['calories', 'protein', 'carbs', 'fat'].forEach((key) => { sum[key] += Number(entry[key]) || 0; });
+      return sum;
+    }, { calories: 0, protein: 0, carbs: 0, fat: 0 });
+    document.querySelector(foodTotalIds.calories).textContent = Math.round(totals.calories).toLocaleString();
+    ['protein', 'carbs', 'fat'].forEach((key) => { document.querySelector(foodTotalIds[key]).textContent = totals[key].toFixed(1).replace(/\.0$/, ''); });
+    const calorieGoal = Number(calorieTarget.value);
+    const proteinGoal = Number(proteinTarget.value);
+    const targetParts = [];
+    if (calorieGoal > 0) targetParts.push(`${Math.round(totals.calories).toLocaleString()} of ${calorieGoal.toLocaleString()} kcal`);
+    if (proteinGoal > 0) targetParts.push(`${totals.protein.toFixed(1).replace(/\.0$/, '')} of ${proteinGoal} g protein`);
+    targetSummary.textContent = targetParts.length ? `Optional targets · ${targetParts.join(' · ')}` : 'Targets are optional and saved in this browser.';
+    foodEntryCount.textContent = `${dayEntries.length} ${dayEntries.length === 1 ? 'entry' : 'entries'}`;
+    foodLogList.replaceChildren();
+    if (!dayEntries.length) {
+      const empty = document.createElement('p'); empty.className = 'food-log-empty'; empty.textContent = 'Nothing logged for this date yet.'; foodLogList.append(empty); return;
+    }
+    dayEntries.forEach((entry) => {
+      const row = document.createElement('article'); row.className = 'food-log-item';
+      const description = document.createElement('div');
+      const name = document.createElement('h5'); name.textContent = entry.name;
+      const meta = document.createElement('p'); meta.textContent = `${entry.meal} · ${entry.servings} serving${Number(entry.servings) === 1 ? '' : 's'} · P ${Number(entry.protein || 0).toFixed(1)}g · C ${Number(entry.carbs || 0).toFixed(1)}g · F ${Number(entry.fat || 0).toFixed(1)}g`;
+      description.append(name, meta);
+      const calories = document.createElement('strong'); calories.textContent = `${Math.round(Number(entry.calories) || 0)} kcal`;
+      const remove = document.createElement('button'); remove.type = 'button'; remove.className = 'food-log-remove'; remove.textContent = 'Remove'; remove.setAttribute('aria-label', `Remove ${entry.name}`);
+      remove.addEventListener('click', () => { foodEntries = foodEntries.filter((item) => item.id !== entry.id); if (saveFoodEntries()) renderFoodLog(); });
+      row.append(description, calories, remove); foodLogList.append(row);
+    });
+  }
+  manualFoodForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = new FormData(manualFoodForm);
+    const servings = Number(form.get('servings'));
+    const entry = {
+      id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+      date: foodLogDate.value,
+      meal: String(form.get('meal')),
+      name: String(form.get('name')).trim().slice(0, 100),
+      servings,
+      calories: Number(form.get('calories')) * servings,
+      protein: Number(form.get('protein') || 0) * servings,
+      carbs: Number(form.get('carbs') || 0) * servings,
+      fat: Number(form.get('fat') || 0) * servings
+    };
+    foodEntries = [...foodEntries, entry];
+    if (saveFoodEntries()) {
+      renderFoodLog();
+      manualFoodForm.reset();
+      manualFoodForm.elements.servings.value = '1';
+      manualFoodForm.elements.protein.value = '0';
+      manualFoodForm.elements.carbs.value = '0';
+      manualFoodForm.elements.fat.value = '0';
+    } else {
+      foodEntries = foodEntries.filter((item) => item.id !== entry.id);
+      window.alert('This browser could not save the food entry. Your data was not added.');
+    }
+  });
+  foodLogDate.addEventListener('change', renderFoodLog);
+  calorieTarget.addEventListener('input', () => { saveTargets(); renderFoodLog(); });
+  proteinTarget.addEventListener('input', () => { saveTargets(); renderFoodLog(); });
+  renderFoodLog();
 }
 
 // Weekly weigh-ins stay in this browser only; no server or external service is used.

@@ -60,16 +60,16 @@ showPlan('one');
 
 // A small built-in exercise guide; it works offline and needs no account.
 const exerciseLibrary = [
-  { name:'Goblet squat', equipment:'Dumbbell or kettlebell', type:'both', pose:'squat', focus:'Legs · hips', cue:'Hold one weight close to your chest. Sit between your hips, then stand with control.', option:'Make it easier: squat to a chair or use a lighter weight.', steps:['Stand with feet about shoulder-width and hold one weight close to your chest.','Bend your knees and hips together, lowering only as far as you can stay balanced.','Press through your whole foot to stand tall again.'] },
+  { name:'Goblet squat', equipment:'Dumbbell or kettlebell', type:'both', pose:'squat', image:{type:'video',src:'https://upload.wikimedia.org/wikipedia/commons/c/c3/Kettlebell_Goblet_Squat.webm',alt:'Taco fleur demonstrates a kettlebell goblet squat in a short video',author:'Taco fleur',authorUrl:'https://commons.wikimedia.org/wiki/User:Taco_fleur',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/deed.en',source:'https://commons.wikimedia.org/wiki/File:Kettlebell_Goblet_Squat.webm'}, focus:'Legs · hips', cue:'Hold one weight close to your chest. Sit between your hips, then stand with control.', option:'Make it easier: squat to a chair or use a lighter weight.', steps:['Stand with feet about shoulder-width and hold one weight close to your chest.','Bend your knees and hips together, lowering only as far as you can stay balanced.','Press through your whole foot to stand tall again.'] },
   { name:'Dumbbell bench press', equipment:'Dumbbells · bench', type:'dumbbell', pose:'bench', image:{src:'https://wger.de/media/exercise-images/97/Dumbbell-bench-press-1.png.400x400_q85.jpg',alt:'Wger illustration showing a dumbbell bench press',author:'Everkinetic',license:'CC BY-SA 3.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/3.0/deed.en',source:'https://wger.de/en/exercise/75/view/benchpress-dumbbells'}, focus:'Chest · arms', cue:'Lie on the bench with feet supported. Lower the weights toward your chest, then press up smoothly.', option:'Alternative: use a lighter pair or do a floor press.', steps:['Lie on the bench with your feet supported and weights above your chest.','Bend your elbows and lower the weights with control toward either side of your chest.','Press them back up smoothly without bouncing or forcing your elbows to lock.'] },
   { name:'Single-arm dumbbell row', equipment:'Dumbbell · bench', type:'dumbbell', pose:'row', image:{src:'https://wger.de/media/exercise-images/81/a751a438-ae2d-4751-8d61-cef0e9292174.png.400x400_q85.jpg',alt:'Wger image demonstrating a single-arm dumbbell row',author:'Franpol',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/deed.en',source:'https://wger.de/en/exercise/81/view/bent-over-dumbbell-rows-single-arm'}, focus:'Back · arms', cue:'Support one hand on the bench. Pull the weight toward your hip, then lower it slowly.', option:'Keep your back steady; switch sides after the reps.', steps:['Place one hand and knee or foot on the bench; keep your back comfortably steady.','Let the weight hang below your shoulder, then pull your elbow toward your hip.','Lower the weight slowly and complete the same number of reps on the other side.'] },
   { name:'Farmer carry', equipment:'Dumbbells or kettlebells', type:'both', pose:'carry', focus:'Grip · trunk', cue:'Hold a weight in each hand and walk with short, steady steps. Stand tall and breathe normally.', option:'Start light and use a clear, level path.', steps:['Pick up two manageable weights from a stable position.','Stand tall, keep your shoulders relaxed, and walk with short controlled steps.','Set the weights down gently before you get tired or your posture changes.'] },
-  { name:'Kettlebell swing', equipment:'Kettlebell', type:'kettlebell', pose:'swing', focus:'Hips · posterior chain', cue:'Hinge at the hips and let the bell swing between your thighs. Stand tall to send it forward; arms guide, hips drive.', option:'Use only a familiar, manageable bell and a practiced hinge. Otherwise substitute a light RDL.', steps:['Set the bell in front of you, hinge back, and grip it with both hands.','Hike it between your thighs, then snap your hips open to send it forward; keep your arms relaxed.','Let the bell return and hinge back again. Stop if your back position or control changes.'] },
-  { name:'Standing strict press', equipment:'Dumbbells or kettlebells', type:'both', pose:'press', focus:'Shoulders · arms', cue:'Start at shoulder height. Keep your ribs comfortably stacked and press overhead without leaning back.', option:'Use one light dumbbell at a time or press seated.', steps:['Stand with feet comfortable and weights at shoulder height.','Brace gently and press up until your arms are overhead, without leaning back.','Lower the weights to your shoulders with control.'] },
-  { name:'Reverse lunge', equipment:'Bodyweight', type:'bodyweight', pose:'lunge', focus:'Legs · balance', cue:'Step one foot back, lower only as far as comfortable, then push through the front foot to stand.', option:'Hold a wall or chair for balance; shorten the step if needed.', steps:['Stand beside a wall or chair if you want support.','Step one foot back and bend both knees a little, only as far as comfortable.','Push through the front foot to return to standing, then switch legs.'] },
-  { name:'Plank', equipment:'Bodyweight', type:'bodyweight', pose:'plank', focus:'Trunk', cue:'Support yourself on forearms and knees or toes. Keep your body steady and breathe; stop before your position sags.', option:'Start with a short hold from your knees.', steps:['Place your forearms on the floor and set your knees down or extend your legs.','Keep your head, trunk, and hips in a comfortable line while breathing steadily.','End the hold before your hips sag or your back feels strained.'] },
+  { name:'Kettlebell swing', equipment:'Kettlebell', type:'kettlebell', pose:'swing', image:{src:'https://upload.wikimedia.org/wikipedia/commons/3/3b/Kettlebell_swing_with_arms_fully_extended.jpg',alt:'Kettlebell swing with the arms extended forward',author:'Taco fleur',authorUrl:'https://commons.wikimedia.org/wiki/User:Taco_fleur',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/deed.en',source:'https://commons.wikimedia.org/wiki/File:Kettlebell_swing_with_arms_fully_extended.jpg'}, focus:'Hips · posterior chain', cue:'Hinge at the hips and let the bell swing between your thighs. Stand tall to send it forward; arms guide, hips drive.', option:'Use only a familiar, manageable bell and a practiced hinge. Otherwise substitute a light RDL.', steps:['Set the bell in front of you, hinge back, and grip it with both hands.','Hike it between your thighs, then snap your hips open to send it forward; keep your arms relaxed.','Let the bell return and hinge back again. Stop if your back position or control changes.'] },
+  { name:'Standing strict press', equipment:'Dumbbells or kettlebells', type:'both', pose:'press', image:{src:'https://upload.wikimedia.org/wikipedia/commons/0/08/Girl_doing_dumbbell_shoulder_press.jpg',alt:'Dumbbell shoulder press demonstration',author:'Trainer Academy',authorUrl:'https://traineracademy.org/',license:'CC BY-SA 3.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/3.0/deed.en',source:'https://commons.wikimedia.org/wiki/File:Girl_doing_dumbbell_shoulder_press.jpg'}, focus:'Shoulders · arms', cue:'Start at shoulder height. Keep your ribs comfortably stacked and press overhead without leaning back.', option:'Use one light dumbbell at a time or press seated.', steps:['Stand with feet comfortable and weights at shoulder height.','Brace gently and press up until your arms are overhead, without leaning back.','Lower the weights to your shoulders with control.'] },
+  { name:'Reverse lunge', equipment:'Bodyweight', type:'bodyweight', pose:'lunge', image:{src:'https://upload.wikimedia.org/wikipedia/commons/4/45/Rear-lunges-1-1024x1015.png',alt:'Illustration of a reverse lunge',author:'Everkinetic',authorUrl:'https://commons.wikimedia.org/wiki/User:Everkinetic',license:'CC BY-SA 3.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/3.0/deed.en',source:'https://commons.wikimedia.org/wiki/File:Rear-lunges-1-1024x1015.png'}, focus:'Legs · balance', cue:'Step one foot back, lower only as far as comfortable, then push through the front foot to stand.', option:'Hold a wall or chair for balance; shorten the step if needed.', steps:['Stand beside a wall or chair if you want support.','Step one foot back and bend both knees a little, only as far as comfortable.','Push through the front foot to return to standing, then switch legs.'] },
+  { name:'Plank', equipment:'Bodyweight', type:'bodyweight', pose:'plank', image:{src:'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Woman_performing_plank_exercise_at_home_gym.jpg/960px-Woman_performing_plank_exercise_at_home_gym.jpg',alt:'Person demonstrating a forearm plank',author:'Shixart1985 / Nenad Stojković',authorUrl:'https://commons.wikimedia.org/wiki/User:Shixart1985',license:'CC BY 2.0',licenseUrl:'https://creativecommons.org/licenses/by/2.0/deed.en',source:'https://commons.wikimedia.org/wiki/File:Woman_performing_plank_exercise_at_home_gym.jpg'}, focus:'Trunk', cue:'Support yourself on forearms and knees or toes. Keep your body steady and breathe; stop before your position sags.', option:'Start with a short hold from your knees.', steps:['Place your forearms on the floor and set your knees down or extend your legs.','Keep your head, trunk, and hips in a comfortable line while breathing steadily.','End the hold before your hips sag or your back feels strained.'] },
   { name:'Dumbbell Romanian deadlift', equipment:'Dumbbells', type:'dumbbell', pose:'hinge', focus:'Hips · hamstrings', cue:'Hold weights in front of your thighs. Push your hips back with a soft knee bend, then stand by bringing your hips forward.', option:'Lower only as far as you can keep a comfortable, steady back.', steps:['Stand tall with weights near your thighs and knees slightly bent.','Push your hips back as the weights slide close down your legs; stop when you feel a comfortable stretch.','Press through your feet and bring your hips forward to stand tall.'] },
-  { name:'Low step-up', equipment:'Low step · bodyweight', type:'bodyweight', pose:'stepup', focus:'Legs · balance', cue:'Use a stable, low step. Place one whole foot on it, stand up smoothly, and step down with control.', option:'Use a chair sit-to-stand if the step feels uncomfortable.', steps:['Choose a low, stable step and stand close to it.','Place one whole foot on the step and push through it to stand up.','Step down slowly and repeat on the same side before switching.'] },
+  { name:'Low step-up', equipment:'Low step · bodyweight', type:'bodyweight', pose:'stepup', image:{src:'https://upload.wikimedia.org/wikipedia/commons/c/ca/Step_up-CDC_strength_training_for_older_adults.gif',alt:'Centers for Disease Control and Prevention step-up exercise animation',author:'Centers for Disease Control and Prevention',authorUrl:'https://commons.wikimedia.org/wiki/Author:Centers_for_Disease_Control_and_Prevention',license:'Public domain (U.S. federal work)',licenseUrl:'https://commons.wikimedia.org/wiki/File:Step_up-CDC_strength_training_for_older_adults.gif',source:'https://commons.wikimedia.org/wiki/File:Step_up-CDC_strength_training_for_older_adults.gif'}, focus:'Legs · balance', cue:'Use a stable, low step. Place one whole foot on it, stand up smoothly, and step down with control.', option:'Use a chair sit-to-stand if the step feels uncomfortable.', steps:['Choose a low, stable step and stand close to it.','Place one whole foot on the step and push through it to stand up.','Step down slowly and repeat on the same side before switching.'] },
   { name:'Dumbbell floor press', equipment:'Dumbbells · floor', type:'dumbbell', pose:'floorpress', focus:'Chest · arms', cue:'Lie on the floor with knees bent. Lower your upper arms gently to the floor, then press the weights up.', option:'Use a light load and a comfortable range.', steps:['Lie on your back with knees bent and weights above your chest.','Lower your elbows until your upper arms touch the floor gently.','Press the weights up smoothly, then lower them with control.'] },
   { name:'Suitcase carry', equipment:'One dumbbell or kettlebell', type:'both', pose:'suitcase', focus:'Grip · trunk', cue:'Hold one weight at your side. Walk slowly without leaning; switch hands and repeat.', option:'Begin with a light weight and a short distance.', steps:['Pick up one manageable weight and let it rest by your side.','Walk slowly while keeping your trunk upright and shoulders level.','Set it down gently, switch hands, and walk back.'] }
 ];
@@ -87,24 +87,47 @@ if (exerciseGrid) {
     if (!exercise.image) {
       const note = document.createElement('p');
       note.className = 'exercise-image-unavailable';
-      note.textContent = 'No verified matching wger image is available for this movement yet.';
+      note.textContent = 'No verified matching openly licensed reference image is available for this movement yet.';
       const browse = document.createElement('a');
-      browse.href = 'https://wger.de/en/exercise/overview/';
+      browse.href = 'https://commons.wikimedia.org/wiki/Commons:Licensing';
       browse.target = '_blank';
       browse.rel = 'noopener noreferrer';
-      browse.textContent = 'Browse wger’s exercise library ↗';
+      browse.textContent = 'About image licenses ↗';
       visual.append(note, browse);
       return visual;
     }
-    const image = document.createElement('img');
-    image.className = 'exercise-reference-image';
-    image.src = exercise.image.src;
-    image.alt = exercise.image.alt;
-    image.loading = 'lazy';
-    image.referrerPolicy = 'no-referrer';
+    let media;
+    if (exercise.image.type === 'video') {
+      media = document.createElement('video');
+      media.className = 'exercise-reference-video';
+      media.controls = true;
+      media.preload = 'none';
+      media.playsInline = true;
+      media.setAttribute('aria-label', exercise.image.alt);
+      const videoSource = document.createElement('source');
+      videoSource.src = exercise.image.src;
+      videoSource.type = 'video/webm';
+      media.append(videoSource);
+    } else {
+      media = document.createElement('img');
+      media.className = 'exercise-reference-image';
+      media.src = exercise.image.src;
+      media.alt = exercise.image.alt;
+      media.loading = 'lazy';
+      media.referrerPolicy = 'no-referrer';
+    }
     const credit = document.createElement('p');
     credit.className = 'exercise-image-credit';
-    credit.append(document.createTextNode('Image: ' + exercise.image.author + ' · '));
+    credit.append(document.createTextNode((exercise.image.type === 'video' ? 'Video: ' : 'Image: ')));
+    if (exercise.image.authorUrl) {
+      const authorLink = document.createElement('a');
+      authorLink.href = exercise.image.authorUrl;
+      authorLink.target = '_blank';
+      authorLink.rel = 'noopener noreferrer';
+      authorLink.textContent = exercise.image.author;
+      credit.append(authorLink);
+    } else credit.append(document.createTextNode(exercise.image.author));
+    credit.append(document.createTextNode(' · '));
     const licenseLink = document.createElement('a');
     licenseLink.href = exercise.image.licenseUrl;
     licenseLink.target = '_blank';
@@ -114,9 +137,9 @@ if (exerciseGrid) {
     sourceLink.href = exercise.image.source;
     sourceLink.target = '_blank';
     sourceLink.rel = 'noopener noreferrer';
-    sourceLink.textContent = 'wger source';
+    sourceLink.textContent = exercise.image.source.includes('wger.de') ? 'wger source' : 'Commons source';
     credit.append(licenseLink, document.createTextNode(' · '), sourceLink);
-    visual.append(image, credit);
+    visual.append(media, credit);
     return visual;
   }
   function renderExercises() {
@@ -139,7 +162,7 @@ if (exerciseGrid) {
       const cue = document.createElement('p'); cue.className = 'exercise-cue'; cue.textContent = exercise.cue;
       const option = document.createElement('p'); option.className = 'exercise-option'; option.textContent = exercise.option;
       const detail = document.createElement('details'); detail.className = 'exercise-details';
-      const summary = document.createElement('summary'); summary.textContent = exercise.image ? 'See wger image & steps' : 'See steps';
+      const summary = document.createElement('summary'); summary.textContent = exercise.image ? 'See reference media & steps' : 'See steps';
       const illustration = exerciseVisual(exercise);
       const stepsHeading = document.createElement('h5'); stepsHeading.textContent = 'How to do it';
       const steps = document.createElement('ol');
@@ -451,4 +474,5 @@ if (weightForm) {
 
   renderEntries();
 }
+
 

@@ -4,13 +4,15 @@ A static workout and nutrition guide. No install, database, payments, accounts, 
 
 ## Files
 
-- `index.html` contains the page sections and sample workouts.
-- `styles.css` controls the colors, layout, responsive mobile view, and text sizing.
-- `script.js` lets readers switch workout tabs and save weekly weigh-ins in their own browser on their own device.
+- `index.html` contains the page sections, sample workouts, exercise guide, and food log forms.
+- `styles.css` controls the colors, layout, responsive mobile view, text sizing, and exercise diagrams.
+- `script.js` switches workout tabs, filters and searches the exercise guide, and saves weigh-ins and food entries in the visitor's own browser.
 
 ## Important before sharing
 
-This is a general sample, not an individualized exercise or nutrition plan. The sample movements and reps may not fit every reader. The weight tracker saves information locally in each reader's browser; entries do not sync or get sent to you.
+This is a general sample, not an individualized exercise or nutrition plan. The sample movements and reps may not fit every reader. Weight and food entries save locally in each reader's browser; entries do not sync or get sent to you.
+
+The food log opens Open Food Facts product pages by barcode. Product information is community-contributed and should be checked against package labels. The food log itself does not send food entries to Open Food Facts; the visitor must choose to open an external product page. The log supports manual entry and calculates daily calorie and macro totals in the browser.
 
 This source repository is public. GitHub Pages can serve the site at a public, phone-friendly link after Pages is enabled in repository settings.
 

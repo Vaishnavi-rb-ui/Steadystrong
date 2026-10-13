@@ -262,3 +262,61 @@ body { font-size:16px; }
 @media(max-width:740px) { .weight-form { grid-template-columns:1fr 1fr; }.weight-form .weight-note-field { grid-column:1/-1; }.weight-form .button { grid-column:1/-1; }.weight-tracker { padding:14px; } }
 @media(max-width:440px) { .weight-table { min-width:620px; } }
 
+/* Apple-inspired visual refresh: system typography, restrained neutrals, and blue accents. */
+:root {
+  --ink:#1d1d1f;
+  --muted:#6e6e73;
+  --paper:#fff;
+  --white:#fff;
+  --green:#0071e3;
+  --sage:#eaf3ff;
+  --orange:#0071e3;
+  --yellow:#ffd60a;
+  --line:#d2d2d7;
+  --serif:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+body { background:#fff; color:var(--ink); letter-spacing:-.01em; }
+.site-header { background:rgba(255,255,255,.94); border-color:#e8e8ed; }
+.brand { font-weight:650; }
+.brand-mark { background:var(--ink); }
+.site-header nav a:hover,.text-link:hover { color:#06c; }
+.hero { padding-top:58px; padding-bottom:58px; }
+h1 { font-weight:650; letter-spacing:-.055em; }
+h1 em,h2 em { color:var(--green); font-style:normal; }
+.eyebrow,.session-kicker { color:#0071e3; }
+.button { border-radius:999px; background:#0071e3; padding-inline:21px; }
+.button:hover { background:#0077ed; }
+.hero-art { border-radius:30px; background:linear-gradient(145deg,#f5f5f7,#e9f2ff); }
+.sun { background:#dceaff; }
+.ring { border-color:#aecdf4; }
+.ring-b { border-color:#bfc7d2; }
+.center-badge { background:#1d1d1f; box-shadow:0 12px 34px #1d1d1f20; }
+.center-badge span { color:#9fc8ff; }
+.art-card { border-radius:13px; box-shadow:0 8px 25px #1d1d1f14; }
+.history,.plan-card,.supp-card,.weight-tracker,.supplement-inventory { border-color:#e5e5ea; border-radius:18px; }
+.history-tag,.time-chip,.log-total,.meal-plan { border-radius:10px; }
+.day-list { background:#f5f5f7; }
+.day { border-radius:12px; }
+.day:hover { background:#e8e8ed; }
+.day.active { background:#0071e3; }
+.day:focus-visible,.complete:focus-visible,a:focus-visible { outline-color:#0071e3; }
+.food-section { background:#f5f5f7; }
+.meal-card,.preference-card,.logged-day,.meal-timeline article,.yogurt-math,.supplement-inventory,.dfw-notes { border-radius:16px; }
+.plate { border-color:#f5f5f7; background:conic-gradient(from -90deg,#a8cba7 0deg 125deg,#ffd60a 125deg 245deg,#ff9f7a 245deg 360deg); }
+.plate-center { border-color:#f5f5f7; background:#dceaff; }
+.supp-card { border-radius:18px; }
+.supp-card.featured,.training-plan-intro { background:#f5f5f7; border-color:#e5e5ea; }
+.pill { border-radius:999px; }
+.training-plan-intro,.phase-grid article,.weight-summary { border-radius:14px; }
+.phase-grid article { border:1px solid #e5e5ea; }
+.training-plan-intro .conditioning-note { border-radius:10px; background:#fff; }
+.weight-form input,.backup-button,.delete-entry { border-radius:10px; }
+.weight-summary { background:#f5f5f7; }
+.last-word { background:#1d1d1f; }
+.button.light { background:#fff; color:#0071e3; }
+@media(max-width:740px) {
+  .hero { padding-top:42px; }
+  .site-header { background:rgba(255,255,255,.96); }
+}
+
